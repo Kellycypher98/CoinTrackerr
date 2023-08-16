@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "/src/index.css";
+import { useAppContext } from "./../../contexts/AppContext";
 
 export default function RecentTranx() {
+  const { transactions } = useAppContext();
+
   return (
     <div className="overflow-x-auto">
       <table className="w-full rounded-lg">
@@ -17,17 +20,20 @@ export default function RecentTranx() {
           </tr>
         </thead>
         <tbody>
-          <tr className=" text-center">
-            <td className="p-2">12 Aug, 2023</td>
-            <td className="p-2">Kelvin</td>
-            <td className="p-2">purpose</td>
-            <td className="p-2">Debit</td>
-            <td className="p-2">GHS 300</td>
-            <td className="p-2">
-              <button className="border p-1 rounded-lg">edit</button>
-            </td>
-          </tr>
-          {/* Add more rows as needed */}
+          {transactions.map((transaction, index) => (
+            <tr key={index} className="text-center">
+              <td className="p-2">{transaction.date}</td>
+              <td className="p-2">{transaction.from}</td>
+              <td className="p-2">{transaction.purpose}</td>
+              <td className="p-2">
+                {transaction.amount < 0 ? "Debit" : "Credit"}
+              </td>
+              <td className="p-2">{transaction.amount}</td>
+              <td className="p-2">
+                <button className="border p-1 rounded-lg">edit</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
