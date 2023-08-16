@@ -9,7 +9,7 @@ export default function ProfileCard() {
 
   const handleExpenseFormSubmit = (event) => {
     event.preventDefault();
-    const amount = parseFloat(event.target.elements["Currency"].value); // Extract amount as a float
+    const amount = parseFloat(formData.amount); // Extract amount from formData
     if (!isNaN(amount)) {
       handleAddMoney(amount);
       const dialog = document.getElementById("my_modal_3");
