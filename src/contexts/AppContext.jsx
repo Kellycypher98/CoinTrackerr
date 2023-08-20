@@ -7,7 +7,7 @@ export function useAppContext() {
 }
 
 export function AppContextProvider({ children }) {
-  const [currentBalance, setCurrentBalance] = useState(4000);
+  const [currentBalance, setCurrentBalance] = useState(0);
   const [transactions, setTransactions] = useState([]);
   const addTransaction = (transaction) => {
     setTransactions((prevTransactions) => [...prevTransactions, transaction]);

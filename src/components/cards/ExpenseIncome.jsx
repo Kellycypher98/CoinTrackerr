@@ -2,7 +2,7 @@ import React from "react";
 import { useAppContext } from "./../../contexts/AppContext";
 import "./../../index.css";
 
-export default function ExpenseIncome() {
+export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
   const { addTransaction } = useAppContext();
   const [activeForm, setActiveForm] = React.useState("expense");
   const [formData, setFormData] = React.useState({
@@ -23,10 +23,14 @@ export default function ExpenseIncome() {
       notes: formData.notes,
     };
 
+    const parsedAmount = parseFloat(formData.amount);
+
     if (activeForm === "expense") {
-      transaction.amount = -parseFloat(formData.amount);
+      setCurrentBalance((prevBalance) => prevBalance - parsedAmount);
+      transaction.amount = -parsedAmount;
     } else if (activeForm === "income") {
-      transaction.amount = parseFloat(formData.amount);
+      setCurrentBalance((prevBalance) => prevBalance + parsedAmount);
+      transaction.amount = parsedAmount;
     }
 
     addTransaction(transaction);
@@ -43,10 +47,23 @@ export default function ExpenseIncome() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    if (name === "amount") {
+      const parsedAmount = parseFloat(value);
+
+      if (!isNaN(parsedAmount)) {
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: parseFloat(value), // Parse the value to a float
+        }));
+      } else {
+        // Handle invalid input (non-numeric value)
+      }
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
 
   const expenseClicked = () => {
