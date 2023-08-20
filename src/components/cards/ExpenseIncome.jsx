@@ -78,22 +78,22 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
     <div className="border flex flex-col w-full rounded-lg">
       <div className="flex flex-row divide-y md:divide-x">
         <button
-          className="w-full md:w-2/4 bg-gray-100 py-3 md:py-5"
+          className="w-full md:w-2/4 bg-gray-100 py-3 md:py-5 focus:bg-gray-300"
           onClick={expenseClicked}
         >
           Expense
         </button>
         <button
-          className="w-full md:w-2/4 bg-gray-100 py-3 md:py-5"
+          className="w-full md:w-2/4 bg-gray-100 py-3 md:py-5 focus:bg-gray-300"
           onClick={incomeClicked}
         >
           Income
         </button>
       </div>
       <div>
-        <h1 className="text-center p-5">Add transaction</h1>
         {activeForm === "expense" && (
           <form className="flex flex-col gap-5 p-5" onSubmit={handleFormSubmit}>
+            <h1 className="text-center p-5">Expense</h1>
             <div className="flex flex-col md:flex-row gap-5">
               <div className="flex flex-col w-full md:w-3/4 gap-2">
                 <label className="block">From</label>
@@ -103,16 +103,18 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
                   name="from"
                   value={formData.from}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="flex flex-col w-full md:w-1/4 gap-2">
-                <label htmlFor="Currency">USD</label>
+                <label htmlFor="Currency">Amount</label>
                 <input
                   type="number"
                   className="border p-2 rounded-lg"
                   name="amount"
                   value={formData.amount}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
             </div>
@@ -125,6 +127,7 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
                   name="purpose"
                   value={formData.purpose}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="flex flex-col w-full md:w-1/4 gap-2">
@@ -135,6 +138,7 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
                   name="date"
                   value={formData.date}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
             </div>
@@ -147,7 +151,10 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
                 value={formData.notes}
                 onChange={handleInputChange}
               />
-              <button className="border px-2 rounded-lg" type="submit">
+              <button
+                className="border px-2 rounded-lg bg-blue-400 hover:bg-blue-500 text-white"
+                type="submit"
+              >
                 Add expense
               </button>
             </div>
@@ -159,6 +166,7 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
             className="flex flex-col gap-5 p-5 "
             onSubmit={handleFormSubmit}
           >
+            <h1 className="text-center p-5">Income</h1>
             <div className="flex flex-col md:flex-row gap-5">
               <div className="flex flex-col w-full md:w-3/4 gap-2">
                 <label className="block">To</label>
@@ -212,7 +220,10 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
                 value={formData.notes}
                 onChange={handleInputChange}
               />
-              <button className="border px-2 rounded-lg" type="submit">
+              <button
+                className="border px-2 rounded-lg bg-blue-400 hover:bg-blue-500 text-white"
+                type="submit"
+              >
                 Add income
               </button>
             </div>
