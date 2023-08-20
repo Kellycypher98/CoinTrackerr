@@ -7,7 +7,7 @@ export default function WeeklyChart() {
       <h1 className="title">Weekly Spending</h1>
       <img
         className="w-50"
-        src="public/column-chart-example.svg"
+        src="src/column-chart-example.svg"
         alt="mock image of chart"
       />
     </div>
