@@ -75,7 +75,7 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
   };
 
   return (
-    <div className="border flex flex-col w-full rounded-lg">
+    <div className="border flex flex-col w-full rounded-lg shadow-lg">
       <div className="flex flex-row divide-y md:divide-x">
         <button
           className="w-full md:w-2/4 bg-gray-100 py-3 md:py-5 focus:bg-gray-300"

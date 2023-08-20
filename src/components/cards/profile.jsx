@@ -14,8 +14,8 @@ export default function ProfileCard({ currentBalance, setCurrentBalance }) {
   };
 
   return (
-    <div className="w-full border rounded-lg px-2 py-4">
-      <h1>Welcome Kelvin</h1>
+    <div className="w-full border rounded-lg px-2 py-4 shadow-lg">
+      <h1>Welcome user </h1>
       <div className="flex justify-between">
         <p>current balance: ${currentBalance.toFixed(2)}</p>
         <button
@@ -51,7 +51,7 @@ export default function ProfileCard({ currentBalance, setCurrentBalance }) {
           </form>
         </dialog>
       </div>
-      <p>spending behavior: stingy</p>
+      <p>spending behavior: unknown</p>
     </div>
   );
 }

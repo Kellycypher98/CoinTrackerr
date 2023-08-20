@@ -27,7 +27,7 @@ const Sidebar = () => {
             </label>
           </div>
           <div className="w-full lg:hidden">
-            <div className="flex px-2 mx-2 w-full">KudiWise</div>
+            <div className="flex px-2 mx-2 w-full">💰 CoinTrackerr</div>
           </div>
         </div>
       </div>

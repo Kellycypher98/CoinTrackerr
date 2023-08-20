@@ -7,7 +7,7 @@ export default function RecentTranx() {
   const { transactions } = useAppContext();
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto shadow-lg">
       <table className="w-full rounded-lg">
         <thead>
           <tr className="bg-gray-100 ">
