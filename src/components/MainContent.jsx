@@ -11,7 +11,7 @@ const MainContent = () => {
   return (
     <div className=" w-full">
       <Routes>
-        <Route path="/Dashboard" element={<Dashboard />} />{" "}
+        <Route path="/Dashboard" element={<Dashboard />} index />{" "}
         <Route path="/Transaction" element={<Transaction />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Report" element={<Report />} />
