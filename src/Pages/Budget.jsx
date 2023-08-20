@@ -3,7 +3,7 @@ import React from "react";
 const Budget = () => {
   return (
     <div className="flex justify-center items-center h-screen">
-      <h1 className="text-3xl md:text-8xl">Still Building 👨🏾‍💻</h1>
+      <h1 className="text-3xl md:text-8xl">Still Building 👨🏾‍💻 </h1>
     </div>
   );
 };
