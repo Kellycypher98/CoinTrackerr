@@ -35,7 +35,7 @@ const Sidebar = () => {
       <div className="drawer-side">
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
         <nav className="menu p-4 h-full bg-base-200 text-base-content">
-          <Link to="/Dashboard" className="block py-2 px-4 hover:bg-gray-700">
+          <Link to="/" className="block py-2 px-4 hover:bg-gray-700">
             Dashboard
           </Link>
           <Link to="/Transaction" className="block py-2 px-4 hover:bg-gray-700">
