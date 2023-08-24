@@ -78,13 +78,13 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
     <div className="border flex flex-col w-full rounded-lg shadow-lg">
       <div className="flex flex-row divide-y md:divide-x">
         <button
-          className="w-full md:w-2/4 bg-gray-100 py-3 md:py-5 focus:bg-gray-300"
+          className="w-full md:w-2/4 bg-gray-100 py-3 md:py-5 hover:bg-gray-300 active:bg-violet-700 focus:outline-none focus:ring focus:ring-gray-300 "
           onClick={expenseClicked}
         >
           Expense
         </button>
         <button
-          className="w-full md:w-2/4 bg-gray-100 py-3 md:py-5 focus:bg-gray-300"
+          className="w-full md:w-2/4 bg-gray-100 py-3 md:py-5 active:bg-violet-700 focus:outline-none focus:ring focus:ring-gray-300 "
           onClick={incomeClicked}
         >
           Income
@@ -176,6 +176,7 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
                   name="from"
                   value={formData.from}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="flex flex-col w-full md:w-1/4 gap-2">
@@ -186,6 +187,7 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
                   name="amount"
                   value={formData.amount}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
             </div>
@@ -198,6 +200,7 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
                   name="purpose"
                   value={formData.purpose}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="flex flex-col w-full md:w-1/4 gap-2">
@@ -208,6 +211,7 @@ export default function ExpenseIncome({ currentBalance, setCurrentBalance }) {
                   name="date"
                   value={formData.date}
                   onChange={handleInputChange}
+                  required
                 />
               </div>
             </div>

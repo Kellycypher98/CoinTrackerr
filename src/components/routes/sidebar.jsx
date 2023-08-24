@@ -3,6 +3,8 @@ import "../../index.css";
 
 import { Link } from "react-router-dom";
 
+import ThemeToggle from "../Toggle/ThemeToggle";
+
 const Sidebar = () => {
   return (
     <div className="drawer w-fit lg:drawer-open">
@@ -26,8 +28,14 @@ const Sidebar = () => {
               </svg>
             </label>
           </div>
-          <div className="w-full lg:hidden">
-            <div className="flex px-2 mx-2 w-full">💰 CoinTrackerr</div>
+          <div className="w-full lg:hidden flex gap-3 ">
+            <div className="flex mx-2 w-full text-sm">💰 CoinTrackerr</div>
+            <ThemeToggle />
+            <div className="avatar placeholder">
+              <div className="bg-gray-400  text-neutral-content rounded-full md:w-8 w-8 ring ring-black ring-offset-base-100 ring-offset-2 ">
+                <span>U</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
