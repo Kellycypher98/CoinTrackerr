@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./../Pages/Dashboard";
-import Transaction from "./../pages/Transaction";
+import Transaction from "./../Pages/Transaction";
 import Account from "./../pages/Account";
 import Report from "./../pages/Report";
 import Budget from "./../pages/Budget";
