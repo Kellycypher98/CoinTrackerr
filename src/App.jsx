@@ -8,7 +8,7 @@ import "./index.css";
 function App() {
   return (
     <AppContextProvider>
-      <div className="flex lg:flex-row md:flex-col flex-col w-full">
+      <div className="flex  lg:flex-row md:flex-col flex-col w-full">
         <Sidebar />
         <MainContent />
       </div>
