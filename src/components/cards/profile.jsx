@@ -25,13 +25,13 @@ export default function ProfileCard({ currentBalance, setCurrentBalance }) {
         >
           Add Money
         </button>
-        <dialog id="my_modal_3" className="modal">
+        <dialog id="my_modal_3" className="modal ">
           <form method="dialog" className="modal-box flex flex-col gap-5 p-5">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
             <div className="flex flex-col md:flex-row gap-5">
-              <div className="flex flex-col w-full md:w-3/4 gap-2">
+              <div className="flex flex-col w-full gap-2">
                 <label className="block">Amount</label>
                 <input
                   type="number"
@@ -42,7 +42,7 @@ export default function ProfileCard({ currentBalance, setCurrentBalance }) {
               </div>
             </div>
             <button
-              className="border px-2 rounded-lg"
+              className="border px-2 bg-blue-300 text-white  rounded-lg"
               type="button"
               onClick={handleAddMoney}
             >
