@@ -2,6 +2,8 @@
 import React from "react";
 import "/src/index.css";
 import { useAppContext } from "./../../contexts/AppContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 export default function RecentTranx() {
   const { transactions } = useAppContext();
@@ -30,7 +32,23 @@ export default function RecentTranx() {
               </td>
               <td className="p-2">{transaction.amount}</td>
               <td className="p-2">
-                <button className="border p-1 rounded-lg">edit</button>
+                <button
+                  className="btn"
+                  onClick={() => window.my_modal_3.showModal()}
+                >
+                  <FontAwesomeIcon icon={faPenToSquare} />
+                </button>
+                <dialog id="my_modal_3" className="modal">
+                  <form method="dialog" className="modal-box">
+                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                      ✕
+                    </button>
+                    <h3 className="font-bold text-lg">Hello!</h3>
+                    <p className="py-4">
+                      Press ESC key or click on ✕ button to close
+                    </p>
+                  </form>
+                </dialog>
               </td>
             </tr>
           ))}

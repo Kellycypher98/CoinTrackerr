@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "/src/index.css";
 import { useAppContext } from "./../../contexts/AppContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWallet } from "@fortawesome/free-solid-svg-icons";
 
 export default function ProfileCard({ currentBalance, setCurrentBalance }) {
   // Initial current balance
@@ -19,11 +21,11 @@ export default function ProfileCard({ currentBalance, setCurrentBalance }) {
       <div className="flex justify-between">
         <p>current balance: ${currentBalance.toFixed(2)}</p>
         <button
-          className="bg-gray-300 btn rounded-lg text-sm px-2"
+          className="bg-gray-300 btn rounded-lg text-sm "
           type="button"
           onClick={() => window.my_modal_3.showModal()}
         >
-          Add Money
+          Add <FontAwesomeIcon icon={faWallet} />
         </button>
         <dialog id="my_modal_3" className="modal ">
           <form method="dialog" className="modal-box flex flex-col gap-5 p-5">
