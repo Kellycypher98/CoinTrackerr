@@ -18,18 +18,22 @@ function Login() {
 
 
   return (
-    <div className='flex flex-col justify-center items-center h-screen'>
+    <div className='flex flex-col  items-center h-screen'>
+      <div className='hero'>
+        <h1 className='text-8xl'>💰 CoinTrackerr</h1>
+
+      </div>
       <div className='border p-3 max-w-  rounded-lg shadow-lg'>
         <div className="flex pb-5 justify-center">
           <button
             onClick={loginTabClicked}
-            className="border px-5 md:px-10 py-2 rounded-l-lg"
+            className="border px-5 md:px-10 py-2 rounded-l-lg focus:bg-blue-100"
           >
             Login
           </button>
           <button
             onClick={signUpTabClicked}
-            className="border px-5 md:px-10 rounded-r-lg" 
+            className="border px-5 md:px-10 rounded-r-lg focus:bg-blue-100" 
           >
             Signup
           </button>
@@ -57,18 +61,24 @@ function Login() {
               Login with Google
             </button>
           </form>)}
-            {activeForm === "Signup" && ( // Conditionally render signup fields
+            {activeForm === "Signup" && ( 
               <form className="flex flex-col gap-3">
                 <input
                   type="text"
-                  placeholder="Full Name"
+                  placeholder="Create a username"
+                  
+                  className="border p-2 w-100 rounded-lg"
+                />
+                <input
+                  type="password"
+                  placeholder="Enter a Password"
                   
                   className="border p-2 w-100 rounded-lg"
                 />
                 <input
                   type="password"
                   placeholder="Confirm Password"
-                  // Add state and event handler for confirm password input
+                  
                   className="border p-2 w-100 rounded-lg"
                 />
                 
@@ -76,7 +86,7 @@ function Login() {
               signup
             </button>
             <button type="button" className='border bg-blue-100 rounded-lg'>
-              Login with Google
+              signup with Google
             </button>
               </form>
             )}
