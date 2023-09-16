@@ -1,21 +1,44 @@
+
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import "./../../index.css"
 
-function Login() {
+
+function Login({ setIsAuthenticated }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [activeForm, setActiveForm] = useState ('Login')
-  
- 
+  Login.propTypes = {
+  setIsAuthenticated: PropTypes.func.isRequired, // setIsAuthenticated should be a function and is required
+};
+
+
+  const navigate = useNavigate();
 
   const loginTabClicked =()=>{
     setActiveForm("Login");
   }
-
   const signUpTabClicked =()=>{
     setActiveForm("Signup");
   }
+
+  
+  const handleLogin = (e) => {
+     e.preventDefault();
+    
+    // Simulate a successful login (replace this with your actual login logic)
+    if (email === 'admin@example.com' && password === 'password123') {
+    setIsAuthenticated(true);
+
+      // Redirect to the dashboard after successful login
+      navigate('/Dashboard');
+    } else {
+      // Display an error message for invalid credentials
+      alert('Invalid username or password');
+    }
+  };
 
 
   return (
@@ -41,7 +64,7 @@ function Login() {
           </button>
         </div>
         <div>
-          {activeForm === "Login" && (<form  className="flex flex-col gap-3">
+          {activeForm === "Login" && (<form  className="flex flex-col gap-3" onSubmit={handleLogin}>
             <input
               type="text"
               placeholder="Username"
